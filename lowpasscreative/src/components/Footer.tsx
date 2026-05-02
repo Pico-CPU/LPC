@@ -24,7 +24,7 @@ export function Footer() {
       >
         {/* Left: logo + callsign */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          <LogoMark size={28} />
+          <LogoMark size={44} />
           <span
             style={{
               fontFamily: 'var(--font-mono)',

@@ -44,7 +44,7 @@ export function Header() {
           onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); setMenuOpen(false); }}
           style={{ background: 'none', border: 'none', padding: 0 }}
         >
-          <Logo size="md" />
+          <Logo size="lg" />
         </button>
 
         {/* Desktop nav */}
