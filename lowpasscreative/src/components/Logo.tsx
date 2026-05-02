@@ -68,7 +68,7 @@ export function Logo({ size = 'md', className }: LogoProps) {
   const sizes = {
     sm: { mark: 28, text: 14 },
     md: { mark: 40, text: 18 },
-    lg: { mark: 56, text: 24 },
+    lg: { mark: 68, text: 28 },
   };
   const s = sizes[size];
 
