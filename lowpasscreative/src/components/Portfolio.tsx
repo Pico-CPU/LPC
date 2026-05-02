@@ -13,7 +13,7 @@ interface Tile {
 const TILES: Tile[] = [
   {
     idx: '026',
-    title: 'Malibu Cliffs — listing flyover',
+    title: 'Sierra Nevadas — listing flyover',
     location: 'MALIBU, CA',
     runtime: '01:24',
     gradient: 'linear-gradient(135deg, #2a3a48 0%, #14222b 60%, #0d1820 100%)',
