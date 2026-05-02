@@ -138,7 +138,7 @@ function ServiceCard({ idx, title, blurb, specs }: Service) {
 
 export function Services() {
   return (
-    <section id="services" style={{ padding: '120px 96px', background: 'var(--bg-base)' }}>
+    <section id="services" className="section-pad" style={{ background: 'var(--bg-base)' }}>
       <div
         style={{
           display: 'flex',

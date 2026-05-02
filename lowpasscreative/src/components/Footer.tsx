@@ -7,8 +7,8 @@ const LINKS = ['Instagram', 'Vimeo', 'Frame.io'] as const;
 export function Footer() {
   return (
     <footer
+      className="footer-pad"
       style={{
-        padding: '48px 96px',
         background: 'var(--bg-base)',
         borderTop: '1px solid var(--border-1)',
       }}

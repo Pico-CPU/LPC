@@ -16,14 +16,14 @@ export function Hero() {
 
   return (
     <section
+      className="hero-pad"
       style={{
         position: 'relative',
-        minHeight: '100vh',
+        minHeight: '100dvh',
         background: 'linear-gradient(135deg, #1a2a35 0%, #08131a 45%, #14222b 100%)',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-end',
-        padding: '120px 96px 96px',
         overflow: 'hidden',
       }}
     >
@@ -59,6 +59,7 @@ export function Hero() {
 
       {/* HUD — left */}
       <div
+        className="hero-hud"
         style={{
           position: 'absolute',
           top: 110,
@@ -76,6 +77,7 @@ export function Hero() {
 
       {/* HUD — right (REC indicator) */}
       <div
+        className="hero-hud"
         style={{
           position: 'absolute',
           top: 110,

@@ -49,20 +49,13 @@ export function Contact() {
   return (
     <section
       id="contact"
+      className="section-pad"
       style={{
-        padding: '120px 96px',
         background: 'var(--bg-surface)',
         borderTop: '1px solid var(--border-1)',
       }}
     >
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: '1.4fr 1fr',
-          gap: 96,
-          alignItems: 'flex-start',
-        }}
-      >
+      <div className="contact-grid">
         {/* Left col */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 32 }}>
           <span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.16em', color: 'var(--fg-3)' }}>

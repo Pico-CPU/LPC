@@ -13,15 +13,8 @@ const SPECS: [string, string][] = [
 
 export function Specs() {
   return (
-    <section id="specs" style={{ padding: '120px 96px', background: 'var(--bg-base)' }}>
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1.4fr',
-          gap: 96,
-          alignItems: 'start',
-        }}
-      >
+    <section id="specs" className="section-pad" style={{ background: 'var(--bg-base)' }}>
+      <div className="specs-grid">
         {/* Left col */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
           <span
@@ -75,17 +68,7 @@ export function Specs() {
         {/* Right col — spec table */}
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           {SPECS.map(([label, value]) => (
-            <div
-              key={label}
-              style={{
-                display: 'grid',
-                gridTemplateColumns: '180px 1fr',
-                padding: '20px 0',
-                borderBottom: '1px solid var(--border-1)',
-                alignItems: 'baseline',
-                gap: 24,
-              }}
-            >
+            <div key={label} className="spec-row">
               <span
                 style={{
                   fontFamily: 'var(--font-mono)',

@@ -189,8 +189,8 @@ export function Portfolio() {
   return (
     <section
       id="work"
+      className="section-pad"
       style={{
-        padding: '120px 96px',
         background: 'var(--bg-surface)',
         borderTop: '1px solid var(--border-1)',
         borderBottom: '1px solid var(--border-1)',
@@ -244,13 +244,7 @@ export function Portfolio() {
         </a>
       </div>
 
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(2, 1fr)',
-          gap: 16,
-        }}
-      >
+      <div className="portfolio-grid">
         {TILES.map((t) => (
           <PortfolioTile key={t.idx} {...t} />
         ))}
