@@ -17,11 +17,26 @@ export function Contact() {
     brief: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [focusedField, setFocusedField] = useState<string | null>(null);
 
-  const handleSubmit = () => {
-    if (form.name && form.email) {
+  const handleSubmit = async () => {
+    if (!form.name || !form.email) return;
+    setLoading(true);
+    setError(null);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error('Failed to send');
       setSubmitted(true);
+    } catch {
+      setError('Something went wrong. Please try again or email directly.');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -249,32 +264,44 @@ export function Contact() {
                 />
               </div>
 
+              {error && (
+                <div style={{ fontFamily: 'var(--font-sans)', fontSize: 13, color: 'var(--signal-danger)' }}>
+                  {error}
+                </div>
+              )}
+
               <button
                 onClick={handleSubmit}
+                disabled={loading}
                 style={{
                   marginTop: 8,
                   padding: '14px 18px',
-                  background: 'var(--ice-300)',
-                  color: 'var(--midnight-900)',
+                  background: loading ? 'var(--bg-raised)' : 'var(--ice-300)',
+                  color: loading ? 'var(--fg-3)' : 'var(--midnight-900)',
                   border: 'none',
                   borderRadius: 'var(--radius-md)',
                   fontFamily: 'var(--font-sans)',
                   fontSize: 14,
                   fontWeight: 600,
+                  cursor: loading ? 'not-allowed' : 'pointer',
                   transition: 'background var(--dur-1) var(--ease-out), transform var(--dur-1)',
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--ice-200)')}
-                onMouseLeave={(e) => (e.currentTarget.style.background = 'var(--ice-300)')}
+                onMouseEnter={(e) => { if (!loading) e.currentTarget.style.background = 'var(--ice-200)'; }}
+                onMouseLeave={(e) => { if (!loading) e.currentTarget.style.background = 'var(--ice-300)'; }}
                 onMouseDown={(e) => {
-                  e.currentTarget.style.background = 'var(--ice-400)';
-                  e.currentTarget.style.transform = 'translateY(1px)';
+                  if (!loading) {
+                    e.currentTarget.style.background = 'var(--ice-400)';
+                    e.currentTarget.style.transform = 'translateY(1px)';
+                  }
                 }}
                 onMouseUp={(e) => {
-                  e.currentTarget.style.background = 'var(--ice-200)';
-                  e.currentTarget.style.transform = 'translateY(0)';
+                  if (!loading) {
+                    e.currentTarget.style.background = 'var(--ice-200)';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                  }
                 }}
               >
-                Submit brief →
+                {loading ? 'Sending…' : 'Submit brief →'}
               </button>
             </>
           )}
