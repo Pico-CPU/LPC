@@ -1,12 +1,6 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
-export async function GET() {
-  return NextResponse.json({
-    GMAIL_USER: process.env.GMAIL_USER ? 'SET' : 'MISSING',
-    GMAIL_APP_PASSWORD: process.env.GMAIL_APP_PASSWORD ? 'SET' : 'MISSING',
-  });
-}
 
 function escapeHtml(str: string) {
   return str
