@@ -31,10 +31,11 @@ export function Contact() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       });
-      if (!res.ok) throw new Error('Failed to send');
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.detail || data.error || 'Failed to send');
       setSubmitted(true);
-    } catch {
-      setError('Something went wrong. Please try again or email directly.');
+    } catch (err) {
+      setError(String(err));
     } finally {
       setLoading(false);
     }
