@@ -5,6 +5,7 @@ import { useState } from 'react';
 interface FormData {
   name: string;
   email: string;
+  phone: string;
   location: string;
   brief: string;
 }
@@ -13,6 +14,7 @@ export function Contact() {
   const [form, setForm] = useState<FormData>({
     name: '',
     email: '',
+    phone: '',
     location: '',
     brief: '',
   });
@@ -226,6 +228,7 @@ export function Contact() {
               {[
                 { key: 'name', label: 'NAME', placeholder: 'Your name', type: 'text' },
                 { key: 'email', label: 'EMAIL', placeholder: 'you@studio.com', type: 'email' },
+                { key: 'phone', label: 'PHONE (OPTIONAL)', placeholder: '(555) 000-0000', type: 'tel' },
                 {
                   key: 'location',
                   label: 'ADDRESS OR LOCATION',

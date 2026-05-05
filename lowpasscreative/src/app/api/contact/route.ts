@@ -11,7 +11,7 @@ function escapeHtml(str: string) {
 }
 
 export async function POST(request: Request) {
-  const { name, email, location, brief } = await request.json();
+  const { name, email, phone, location, brief } = await request.json();
 
   if (!name || !email) {
     return NextResponse.json({ error: 'Name and email are required.' }, { status: 400 });
@@ -39,6 +39,7 @@ export async function POST(request: Request) {
           <table style="width:100%;border-collapse:collapse">
             <tr><td style="padding:10px 0;border-bottom:1px solid #eee;width:120px;color:#666;font-size:13px">NAME</td><td style="padding:10px 0;border-bottom:1px solid #eee">${escapeHtml(name)}</td></tr>
             <tr><td style="padding:10px 0;border-bottom:1px solid #eee;color:#666;font-size:13px">EMAIL</td><td style="padding:10px 0;border-bottom:1px solid #eee"><a href="mailto:${email}">${escapeHtml(email)}</a></td></tr>
+            <tr><td style="padding:10px 0;border-bottom:1px solid #eee;color:#666;font-size:13px">PHONE</td><td style="padding:10px 0;border-bottom:1px solid #eee">${escapeHtml(phone || '—')}</td></tr>
             <tr><td style="padding:10px 0;border-bottom:1px solid #eee;color:#666;font-size:13px">LOCATION</td><td style="padding:10px 0;border-bottom:1px solid #eee">${escapeHtml(location || '—')}</td></tr>
             <tr><td style="padding:10px 0;color:#666;font-size:13px;vertical-align:top">BRIEF</td><td style="padding:10px 0;white-space:pre-wrap">${escapeHtml(brief || '—')}</td></tr>
           </table>
