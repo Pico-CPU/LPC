@@ -30,10 +30,10 @@ const SERVICES: Service[] = [
   },
   {
     idx: 3,
-    title: 'Action & nature',
+    title: 'Commercial',
     blurb:
-      'FPV freestyle, athlete tracking, landscape b-roll. Long-form b-roll packages for editors and agencies.',
-    specs: ['FPV chase · DJI Avata 2', 'Landscape shoot · 4K60', 'B-roll package · ProRes'],
+      'Brand videos, social content, and business reels. Aerial footage that gives your business a cinematic edge — cut for Instagram, TikTok, and beyond.',
+    specs: ['Brand reel · 30–90 sec', 'Social package · vertical & horizontal', 'Raw footage delivery · ProRes'],
   },
 ];
 
@@ -171,7 +171,7 @@ export function Services() {
               margin: 0,
             }}
           >
-            Three things, done{' '}
+            What we do{' '}
             <span
               style={{
                 fontFamily: 'var(--font-display)',
@@ -180,7 +180,7 @@ export function Services() {
                 color: 'var(--ice-300)',
               }}
             >
-              well
+              best
             </span>
             .
           </h2>
@@ -193,7 +193,7 @@ export function Services() {
             color: 'var(--fg-3)',
           }}
         >
-          [03 / 03]
+          SPECIALTIES
         </span>
       </div>
 
