@@ -8,7 +8,7 @@ const SPECS: [string, string][] = [
   ['CERTIFICATION', 'FAA Part 107 (current) · Night Operation Waiver'],
   ['INSURANCE', '$1,000,000 hull & liability · Skywatch.AI'],
   ['TURNAROUND', '72 hrs standard · 24 hrs rush available'],
-  ['DELIVERABLES', 'Frame.io · WeTransfer · raw drive on request'],
+  ['DELIVERABLES', 'Fully edited final cut · raw footage available · delivered via Frame.io or WeTransfer'],
 ];
 
 export function Specs() {
