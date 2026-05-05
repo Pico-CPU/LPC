@@ -1,10 +1,10 @@
 'use client';
 
 const SPECS: [string, string][] = [
-  ['AIRFRAME', 'DJI Mavic 3 Pro Cine · DJI Avata 2 (FPV)'],
-  ['SENSOR', '4/3 CMOS Hasselblad · 12.8 stops dynamic range'],
-  ['CODEC', 'Apple ProRes 422 HQ · H.264 5.1K · D-Log M'],
-  ['FRAMERATES', '24 / 30 / 60 / 120fps (slow-mo capable)'],
+  ['AIRFRAME', '5" FPV freestyle · 3" micro whoop'],
+  ['CAMERA', 'GoPro Hero 12'],
+  ['CODEC', 'H.264 · H.265 (HEVC)'],
+  ['FRAMERATES', '5.3K60 · 4K120 · 2.7K240 · 1080p240'],
   ['CERTIFICATION', 'FAA Part 107 (current) · Night Operation Waiver'],
   ['INSURANCE', '$1,000,000 hull & liability · Skywatch.AI'],
   ['TURNAROUND', '72 hrs standard · 24 hrs rush available'],
