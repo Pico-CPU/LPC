@@ -1,7 +1,7 @@
 'use client';
 
 const SPECS: [string, string][] = [
-  ['AIRFRAME', '5" FPV freestyle · 3" micro whoop'],
+  ['AIRFRAME', 'Custom 5" FPV · Custom 3" micro whoop'],
   ['CAMERA', 'GoPro Hero 12'],
   ['CODEC', 'H.264 · H.265 (HEVC)'],
   ['FRAMERATES', '5.3K60 · 4K120 · 2.7K240 · 1080p240'],
